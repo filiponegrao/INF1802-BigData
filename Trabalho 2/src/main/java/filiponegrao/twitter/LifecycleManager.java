@@ -1,3 +1,4 @@
+package filiponegrao.twitter;
 /**
  * Interface para gerência de ciclo de vida de um serviço
  */

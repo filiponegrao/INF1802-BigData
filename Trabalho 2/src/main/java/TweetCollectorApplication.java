@@ -20,11 +20,14 @@ public class TweetCollectorApplication {
 
         // Inicia o servidor HTTP
         URI baseUri = UriBuilder.fromUri("http://" + hostname + "/").port(Integer.parseInt(port)).build();
+        // Configura recurso
         ResourceConfig config = new ResourceConfig(TweetCollectorResource.class);
         config.register(new InjectionBinder());
         HttpServer server = GrizzlyHttpServerFactory.createHttpServer(baseUri, config);
         logger.log(Level.INFO, "Aplicação está disponível em {0}", baseUri.toString());
 
+        //SASAS
+        
         // Adiciona um shutdown hook para terminar o serviço
         Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
             @Override
@@ -41,6 +44,7 @@ public class TweetCollectorApplication {
 
     }
     public static void main(String[] args) throws Exception {
+    	System.out.println("Iniciando aplicação...");
         start();
     }
 
